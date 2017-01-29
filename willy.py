@@ -6,7 +6,7 @@ An awesome webradio written in Python and AngularJS
 
 Authors:
 - Daniele Costarella <daniele.costarella@gmail.com>
-- Matteo Sticco <>
+- Matteo Sticco <matteo.sticco@gmail.com>
 Copyright (c) 2017 ${TM_ORGANIZATION_NAME}. All rights reserved.
 """
 
