@@ -14,4 +14,9 @@ RESTful backend: REST endpoints SHALL be in the following format:<br>
 # Installation
 Before getting started, make sure you have Python 2.7 installed in your system. Install Flask using PIP python package manager.
 
+# Features
+* Radio streaming
+* Local music streaming [clarify]
+* Playlist management [NFC tags?]
+
 <code>pip install flask</code>
