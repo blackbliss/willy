@@ -1,5 +1,5 @@
-var app = angular.module('myApp', []);
+var app = angular.module('RadioApp', []);
 
-app.controller('HomeController', function($scope) {
-  $scope.message = 'Hello from HomeController';
+app.controller('RadioController', function($scope) {
+  $scope.message = 'Cheers from Willy :)';
 });
