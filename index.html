@@ -1,10 +1,22 @@
-<!doctype html>
-<html ng-app="myApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="app.js"></script>
-  </head>
-  <body ng-controller="HomeController">
-    <h1>{{message}}</h1>
-  </body>
+<!DOCTYPE html>
+<html ng-app="RadioApp">
+<head>
+	<title>Willy, your favourite music online.</title>
+	<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="app.js"></script>
+
+</head>
+<body>
+	
+	Write some text in textbox:
+	<input type="text" ng-model="sometext" />
+
+	<h1>Hello {{ sometext }}</h1>
+
+	<div ng-controller="RadioController as radio">
+	   <button ng-click="getRadioStations()">Radio stations</button>
+	</div>
+	
+</body>
 </html>
