@@ -11,6 +11,7 @@ Copyright (c) 2017 ${TM_ORGANIZATION_NAME}. All rights reserved.
 """
 
 from flask import Flask, request, render_template
+import json
 
 app = Flask(__name__)
 
@@ -22,10 +23,13 @@ def hello():
 
 @app.route('/api/stations', methods=['GET'])
 def getStations():
-    return 'Retrieving stations... (todo)'
+    print 'Retrieving stations...'
+    result = {}
+    result['data'] = 'response'
+    return 'Retrieving stations...' #json.dumps(result)
 
 
-@app.route('/api/stations', methods=['POST'])
+@app.route('/api/add-stations', methods=['POST'])
 def addStations():
     return 'Adding stations... (todo)'
 
