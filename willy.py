@@ -18,7 +18,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Great, it works!!!'
+    return render_template('stations.html')
+    #return 'Great, it works!!!'
 
 
 @app.route('/api/stations', methods=['GET'])
@@ -29,7 +30,7 @@ def getStations():
     return 'Retrieving stations...' #json.dumps(result)
 
 
-@app.route('/api/add-stations', methods=['POST'])
+@app.route('/api/stations', methods=['POST'])
 def addStations():
     return 'Adding stations... (todo)'
 
