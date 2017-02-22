@@ -4,6 +4,17 @@ app.controller('RadioController', function($scope, $http) {
 
   $scope.greetings = 'Cheers from Willy :)';
 
+  $scope.radios = [
+  {
+    name: "Virgin Radio",
+    url: "url virgin",
+  },
+  {
+    name: "RTL 102.5",
+    url: "url rtl",
+  }
+  ];
+
   $scope.getRadioStations = function()
   {
     // Simple GET request example:
@@ -21,4 +32,7 @@ app.controller('RadioController', function($scope, $http) {
     });
 
   };
+
+  $scope.getRadioStations()
+
 });
