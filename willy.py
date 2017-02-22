@@ -13,7 +13,7 @@ Copyright (c) 2017 ${TM_ORGANIZATION_NAME}. All rights reserved.
 from flask import Flask, request, render_template
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_path='/static')
 
 
 @app.route('/')
@@ -27,7 +27,7 @@ def getStations():
     print 'Retrieving stations...'
     result = {}
     result['data'] = 'response'
-    return 'Retrieving stations...' #json.dumps(result)
+    return json.dumps(result)
 
 
 @app.route('/api/stations', methods=['POST'])
