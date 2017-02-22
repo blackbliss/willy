@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="RadioApp">
 
 <head>
     <meta charset="utf-8">
@@ -12,14 +12,17 @@
 
     <title>List of radio stations</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <!-- <link href="static/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- <link href="static/css/jumbotron-narrow.css" rel="stylesheet"> -->
-    <link href="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/static/app.js"></script>
     <!-- <script src="static/js/angular.js"></script> -->
+
 </head>
 
-<body>
+<body ng-controller="RadioController as radio">
 
     <div class="container">
         <div class="header clearfix">
@@ -29,11 +32,12 @@
                 </ul>
             </nav>
             <h3 class="text-muted">Radio manager</h3>
+            <h4>{{'{{greetings}}'}}</h4>
         </div>
 
         <div class="bs-example" data-example-id="panel-without-body-with-table">
             <div class="panel panel-default">
-                <div class="panel-heading">List</div>
+                <div class="panel-heading">List of stations</div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -59,12 +63,12 @@
             </div>
         </div>
 
+        <input type="button" value="Radio stations" ng-click="getRadioStations()" />
+
     </div>
 
-
-
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
+    <!--<script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script> -->
 
 </body>
 
