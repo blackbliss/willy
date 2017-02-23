@@ -4,17 +4,6 @@ app.controller('RadioController', function($scope, $http) {
 
   $scope.greetings = 'Cheers from Willy :)';
 
-  $scope.radios = [
-  {
-    name: "Virgin Radio",
-    url: "url virgin",
-  },
-  {
-    name: "RTL 102.5",
-    url: "url rtl",
-  }
-  ];
-
   $scope.getRadioStations = function()
   {
     // Simple GET request example:
@@ -24,7 +13,8 @@ app.controller('RadioController', function($scope, $http) {
     }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
-        $scope.greetings = response.data;
+        //$scope.greetings = response.data;
+        $scope.radios = response.data;
     }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
