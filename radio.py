@@ -37,7 +37,7 @@ class RadioPlayer():
 	def play_station(self, radio):
 		self.stop_any_station()
 		print "{} is about to be played...".format(radio)
-		self.player.set_property('uri', self.radio_stations[radio])
+		self.player.set_property('uri', self.radio_stations[radio]["url"])
 		#self.pipeline.set_state(gst.STATE_PLAYING)
 		self.player.set_state(Gst.State.PLAYING)
 
