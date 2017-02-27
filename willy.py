@@ -11,9 +11,12 @@ Copyright (c) 2017 ${TM_ORGANIZATION_NAME}. All rights reserved.
 """
 
 from flask import Flask, request, render_template
+from radio import RadioPlayer
 import json
 
 app = Flask(__name__, static_path='/static')
+
+radio = RadioPlayer()
 
 
 @app.route('/')
@@ -26,8 +29,12 @@ def hello():
 def getStations():
     print 'Retrieving stations...'
 
-    with open('radio_stations.json') as data_file:
-        radios = json.load(data_file)
+    radios = radio.get_stations()
+
+    # with open('_radio_stations.json') as data_file:
+    #     radios = json.load(data_file)
+
+    #radio.play_station("RTL 102.5");
     
     return json.dumps(radios)
 
