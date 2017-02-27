@@ -25,21 +25,9 @@ def hello():
 @app.route('/api/stations', methods=['GET'])
 def getStations():
     print 'Retrieving stations...'
-    
-    radios = [
-        {
-            "name": "Virgin Radio", 
-            "url": "http://icecast.unitedradio.it/Virgin.mp3"
-        },
-        {
-            "name": "RTL 102.5", 
-            "url": "http://shoutcast.rtl.it:3010/"
-        },
-        {
-            "name": "Radio Deejay", 
-            "url": "http://radiodeejay-lh.akamaihd.net/i/RadioDeejay_Live_1@189857/index_96_a-b.m3u8?sd=10&rebase=on"
-        }
-        ];
+
+    with open('radio_stations.json') as data_file:
+        radios = json.load(data_file)
     
     return json.dumps(radios)
 
