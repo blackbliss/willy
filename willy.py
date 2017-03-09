@@ -34,7 +34,7 @@ def getStations():
     # with open('_radio_stations.json') as data_file:
     #     radios = json.load(data_file)
 
-    #radio.play_station("RTL 102.5");
+    #radio.play_station("RTL 102.5")
     
     return json.dumps(radios)
 
@@ -42,6 +42,14 @@ def getStations():
 @app.route('/api/stations', methods=['POST'])
 def addStations():
     return 'Adding stations... (todo)'
+
+
+@app.route('/api/play-station', methods=['GET'])
+def playStation():
+    print "Playing radio station.."
+    radio.play_station("RTL 102.5")
+
+    return ('', 200)
 
 
 if __name__ == '__main__':
