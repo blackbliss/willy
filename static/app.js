@@ -23,6 +23,26 @@ app.controller('RadioController', function($scope, $http) {
 
   };
 
+
+  $scope.playRadioStation = function()
+  {
+    $http({
+        method: 'GET',
+        url: 'http://localhost:8080/api/play-station'
+    }).then(function successCallback(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+        //$scope.greetings = response.data;
+        //$scope.radios = response.data;
+    }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        //$scope.greetings = response;
+    });
+
+  };
+
+
   $scope.getRadioStations()
 
 });
