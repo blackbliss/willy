@@ -44,10 +44,11 @@ def addStations():
     return 'Adding stations... (todo)'
 
 
-@app.route('/api/play-station', methods=['GET'])
+@app.route('/api/play-station', methods=['POST'])
 def playStation():
-    print "Playing radio station.."
-    radio.play_station("RTL 102.5")
+    station = request.data
+    print "Playing radio {}".format(station)
+    radio.play_station(station)
 
     return ('', 200)
 
