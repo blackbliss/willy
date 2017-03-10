@@ -24,11 +24,12 @@ app.controller('RadioController', function($scope, $http) {
   };
 
 
-  $scope.playRadioStation = function()
+  $scope.playRadioStation = function(radioName)
   {
     $http({
-        method: 'GET',
-        url: 'http://localhost:8080/api/play-station'
+        method: 'POST',
+        url: 'http://localhost:8080/api/play-station',
+        data: radioName
     }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
